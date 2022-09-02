@@ -1,0 +1,11 @@
+Crear una carpeta y dentro de ella en una terminal
+npm i -g nodemon
+npm init -y
+npm i express    /*GRepo de git*/
+
+
+https://github.com/pillarjs/hbs
+npm install hbs
+
+
+Personalizar bash de git - .bashrc
