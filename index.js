@@ -2,13 +2,33 @@ const express = require('express')
 const app = express()
 app.set('view engine', 'hbs');
 
-const port = 3000;
+require('dotenv').config();
+const port = process.env.PORT;
+
+
+
+
 app.use(express.static('public'))
 var hbs = require('hbs')
 hbs.registerPartials(__dirname + '/views/partials')
 
 app.get('/', function(req, res){
-    res.render('home')
+    res.render('home', {
+        titulo: "Topicos",
+        nombre: "Yessid"
+    })
+})
+app.get('/generic', function(req, res){
+    res.render('generic', {
+        titulo: "Topicos",
+        nombre: "Yessid"
+    })
+})
+app.get('/elements', function(req, res){
+    res.render('elements', {
+        titulo: "Topicos",
+        nombre: "Yessid"
+    })
 })
 
 
@@ -40,4 +60,4 @@ app.get('*', function(req, res){
 
 
 
-app.listen(3000)
+app.listen(port)

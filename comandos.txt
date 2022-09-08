@@ -9,3 +9,29 @@ npm install hbs
 
 
 Personalizar bash de git - .bashrc
+
+
+
+Subir el proyecto a un host
+
+Configurar las variabes de entorno
+npm i dotenv
+
+crear un archivo en la raiz del proyecto llamado
+.env
+    PORT=8087
+
+Configurar package.json
+    En la sección donde se encuentr esto se debe cambiar así
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "start": "node index.js"
+        },
+
+
+En index.js Agregar la linea
+
+require('dotenv').config();
+const port = process.env.PORT;
+.....
+app.listen(port)
